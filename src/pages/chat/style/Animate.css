@@ -1,0 +1,54 @@
+/* .page {
+    position: absolute;
+    background-color: #fff;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.page-enter {
+    transform: translateX(100%);
+    opacity: 0.8;
+}
+.page-enter-active {
+    transform: translate(0);
+}
+.page-exit {
+    opacity: 1;
+}
+.page-exit-active {
+    transform: translateX(100%);
+    opacity: 0.8;
+} */
+
+/* 一级页面向二级页面切换 */
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 1000;
+}
+.page-enter {
+    transform: translateX(100%);
+}
+.page-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms;
+}
+.page-exit {
+    opacity: 1;
+}
+.page-exit-active {
+    transform: translateX(100%);
+    transition: opacity 300ms, transform 300ms;
+}
+
+/* 页面内部局部切换 */
+
+
+/* 同级路由间切换 */

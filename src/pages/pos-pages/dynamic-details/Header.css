@@ -1,0 +1,9 @@
+.tab-bar .title {
+    font-size: 0.14rem;
+}
+.around {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}

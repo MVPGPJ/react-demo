@@ -1,0 +1,85 @@
+.box-root-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-containers {
+  display: flex;
+  justify-content: center;
+}
+
+.box-container {
+  display: flex;
+  justify-content: center;
+}
+
+.box-containers div {
+  margin-right: .28rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.14rem;
+}
+
+.box-container div {
+  margin-right: 0.14rem;
+  margin-left: 0.14rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  /* border: 1px solid gray; */
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.14rem;
+}
+
+.box-input {
+  height: 1rem;
+  position: absolute;
+  top: -9999px
+}
+
+.myshake {
+  animation: myshake 1s infinite;
+  -webkit-animation: myshake 2.2s infinite;
+}
+
+@-webkit-keyframes myshake {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes myshake {
+  0% {
+    opacity: 0.8;
+  }
+
+  25% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  75% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}

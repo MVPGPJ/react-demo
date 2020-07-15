@@ -17,7 +17,7 @@ export class SquareItemContainer extends Component {
         this.state = {
             picNumber:1,
             list: [],
-            str: 0,  //点赞数
+            str: 1,  //点赞数
         }
         this.showText = this.showText.bind(this)
         this.addLike = this.addLike.bind(this)
@@ -61,21 +61,21 @@ export class SquareItemContainer extends Component {
     }
 
     addLike(id,index){
-        http.get('/star', {id})
-        this.setState({
-            str: this.state.str[index].star++
-        })
-
+        // http.get('/star', {id})
+        // this.setState({
+        //     str: this.state.str[index].star++
+        // })
+        str: this.state.str[index].star++
     }
 
     render() {
         let list = this.props.squareData
         ? this.props.squareData.list.map((item,index)=>(
-                <SquareItemUI str={this.state.str} index={index} key={item.id} arrowStatus={this.arrowStatus}  addLike={this.addLike} showText={this.showText} info={item} tabNumber = {this.props.tabNumber}></SquareItemUI>
+            <SquareItemUI str={this.state.str} key={index} arrowStatus={this.arrowStatus}  addLike={this.addLike} showText={this.showText} info={item} tabNumber = {this.props.tabNumber}></SquareItemUI>
           )) 
         : []
         return (
-        <StyleSquareItemContainer  backgroundColor= {this.props.backgroundColor}>
+        <StyleSquareItemContainer backgroundColor= {this.props.backgroundColor}>
             {this.props.tabNumber===1 ? <SearchBar /> : ''}
             {list}
         </StyleSquareItemContainer>

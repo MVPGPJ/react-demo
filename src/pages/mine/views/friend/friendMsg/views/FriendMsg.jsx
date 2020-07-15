@@ -85,13 +85,14 @@ class Friend extends Component {
     }
 
     async handleAttention() {
-        let result = await http.get('/focus',{id: this.props.match.params.userId})
-        if (result.code === 1) {
-            showToastNoMask('亲，你已经关注过了哦！')
-        }
-        if (result.code === 0) {
-            showToastNoMask('关注成功,请在关注列表查看')
-        }
+        showToastNoMask('马飞，呜呜呜呜.....')
+        // let result = await http.get('/focus',{id: this.props.match.params.userId})
+        // if (result.code === 1) {
+        //     showToastNoMask('亲，你已经关注过了哦！')
+        // }
+        // if (result.code === 0) {
+        //     showToastNoMask('关注成功,请在关注列表查看')
+        // }
     }
 
     handleChat() {

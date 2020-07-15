@@ -9,7 +9,8 @@ class Time extends Component {
     static getDerivedStateFromProps(nextProps, prevState) {
         if(nextProps.friendData.sign){
            return {
-            xiuxiu : nextProps.friendData.dynamicEnds.length
+            // xiuxiu : nextProps.friendData.dynamicEnds.length
+            xiuxiu: '无数'
            }
         }
         return null;
@@ -19,7 +20,7 @@ class Time extends Component {
         return (
             <TimeStyle>
                 <TimeBorder hasBorder="true" className="day">
-                    <span>{this.props.friendData.days}天，{this.state.xiuxiu}个瞬间</span>
+                    <span>{this.props.friendData.days}天，相见的{this.state.xiuxiu}个瞬间</span>
                 </TimeBorder>
             </TimeStyle>
         );

@@ -10,6 +10,7 @@ import Time from '../time/Time'
 class TopMsg extends Component {
     constructor(props) {
         super(props)
+        console.log(props)
         this.state = {
             changeHeight: 300
         }

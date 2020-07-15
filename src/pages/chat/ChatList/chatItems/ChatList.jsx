@@ -17,7 +17,7 @@ export default class ChatList extends Component {
                         let date = d.getDate();
                         let h = d.getHours();
                         let s = d.getMinutes();
-                        return <ChatItemUI {...item} {...this.props} key={item.id} dateTime={m+"月"+date+"日 "+h+":"+s}></ChatItemUI>
+                        return <ChatItemUI {...item} {...this.props} key={index} dateTime={m+"月"+date+"日 "+h+":"+s}></ChatItemUI>
                     }) : ""
                 }
                 </div>

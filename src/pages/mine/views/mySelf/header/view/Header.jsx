@@ -19,6 +19,7 @@ const mapDispatch = (dispatch) => ({
 class Header extends Component {
     constructor(props) {
         super(props)
+        console.log(props)
         this.handleSetting = this.handleSetting.bind(this)
         this.handleFriend = this.handleFriend.bind(this)
         this.handleGold = this.handleGold.bind(this)
@@ -30,6 +31,7 @@ class Header extends Component {
         if(nextProps.gold){
            return {
             gold : nextProps.gold
+            // gold : 1314
            }
         }
         return null;

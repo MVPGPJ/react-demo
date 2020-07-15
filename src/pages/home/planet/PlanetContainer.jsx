@@ -34,7 +34,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     getUser(data) {
-        dispatch(getPlanetDataAsync(data))
+        // dispatch(getPlanetDataAsync(data))
+        // dispatch()
     }
 })
 

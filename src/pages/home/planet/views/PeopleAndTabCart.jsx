@@ -23,7 +23,7 @@ export default class PeopleAndTabCart extends Component {
         return (
             <StylePeopleAndTab>
                 {/* 在线人数 */}
-                <p className="people-live">当前<span>13131</span>人在线</p>
+                <p className="people-live"><span>拖动小球</span>，爱你们的TeeMo</p>
                 {/* 福袋组件 */}
                 <LuckyBag></LuckyBag>
                 {/* 选项卡 */}

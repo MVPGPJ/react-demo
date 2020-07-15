@@ -25,19 +25,19 @@ class Comment extends Component {
   }
   async componentDidMount() {
     let id=this.props.match.params.id
-    let resDynamic = await http.get('/getdynamic', {
-        id: id || '2'
-    })
-    let resComment = await http.get('/comment', {
-        id: id || '2',
-        pagenum: this.state.pagenum,
-        pagesize: this.state.pagesize,
-    })
-    this.setState({
-        dynamic: resDynamic,
-        comments: resComment.comment.reverse(),
-        commentsCount: resComment.count
-    })
+    // let resDynamic = await http.get('/getdynamic', {
+    //     id: id || '2'
+    // })
+    // let resComment = await http.get('/comment', {
+    //     id: id || '2',
+    //     pagenum: this.state.pagenum,
+    //     pagesize: this.state.pagesize,
+    // })
+    // this.setState({
+    //     dynamic: resDynamic,
+    //     comments: resComment.comment.reverse(),
+    //     commentsCount: resComment.count
+    // })
   }
   handleInput = (e) => {
       let note = e.target.value
@@ -47,18 +47,18 @@ class Comment extends Component {
   }
   handleKeyDown = async (e) => {
       if( e.keyCode === 13 ) {
-        if( this.state.note.trim()==='' ) return
-        let res = await http.post('/setcomment', {
-            id: this.props.match.params.id,
-            note: this.state.note,
-            time: formatNow2YMD(),
-        })
-        if( res ) {
-            this.setState({
-                comments: res.comment.reverse(),
-                note: ''
-            })
-        }
+        // if( this.state.note.trim()==='' ) return
+        // let res = await http.post('/setcomment', {
+        //     id: this.props.match.params.id,
+        //     note: this.state.note,
+        //     time: formatNow2YMD(),
+        // })
+        // if( res ) {
+        //     this.setState({
+        //         comments: res.comment.reverse(),
+        //         note: ''
+        //     })
+        // }
       }
   }
   render() {

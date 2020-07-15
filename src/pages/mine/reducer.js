@@ -11,11 +11,11 @@ const defaultState = Map({
 const reducer = (state=defaultState, action)=>{
   switch(action.type) {
     case MYSELFDATA:
+        console.log(fromJS(action.data))
       return state.set('myselfData', fromJS(action.data))
     case GOLD:
       return state.set('gold', fromJS(action.data))
     case FRIENDDATA:
-      console.log(1)
       console.log(fromJS(action.data))
       return state.set('friendData', fromJS(action.data))
     default:

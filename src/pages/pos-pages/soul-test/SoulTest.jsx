@@ -16,12 +16,12 @@ class SoulTest extends Component {
       }
   }
   async componentDidMount() {
-    let res = await http.get('/dymanic', {
-        type: 'soultest'
-    })
-    this.setState({
-        questionList: res.questions
-    })
+    // let res = await http.get('/dymanic', {
+    //     type: 'soultest'
+    // })
+    // this.setState({
+    //     questionList: res.questions
+    // })
   }
 
   getAnswer = (answers)=>{

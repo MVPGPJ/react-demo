@@ -14,7 +14,7 @@ export default class FocusList extends Component {
             <StyledFocusList>{
                 this.props.list && this.props.list.length > 0 ?
                     this.props.list.map((item, index) => {
-                        return <FocusItem {...item} {...this.props} key={item.id} type={this.props.type == 1 && item.status == 2 ? 2 : this.props.type}></FocusItem>
+                        return <FocusItem {...item} {...this.props} key={index} type={this.props.type == 1 && item.status == 2 ? 2 : this.props.type}></FocusItem>
                     }) : ""
             }
             </StyledFocusList>

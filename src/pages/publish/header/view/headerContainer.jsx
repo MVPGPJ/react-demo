@@ -69,17 +69,17 @@ class HeaderContainer extends Component {
       address,
       image
     }
-
-    var res = await http.post(url, data)
-    if (res.code == 0) {
-      Toast.success('发布成功', 1, null, true)
+    Toast.success('服务端、、、以后俺会补上回忆的', 2, null, true)
+    // var res = await http.post(url, data)
+    // if (res.code == 0) {
+    //   Toast.success('发布成功', 1, null, true)
       
-      setTimeout(() => {
-        this.props.history.push('/home/dynamic')
-      },1000)
-    } else {
-      Toast.fail('发布失败TvT', 1, null, true)
-    }
+    //   setTimeout(() => {
+    //     this.props.history.push('/home/dynamic')
+    //   },1000)
+    // } else {
+    //   Toast.fail('发布失败TvT', 1, null, true)
+    // }
   }
 }
 

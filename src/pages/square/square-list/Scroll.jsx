@@ -8,7 +8,23 @@ class Scroll extends Component {
     constructor(props){
         super(props)
         this.state = {
-            list:[]
+            list:[
+                {
+                    background: 'red',
+                    info: 'info',
+                    head: 'https://q.qlogo.cn/g?b=qq&nk=292847236&s=100',
+                    tabNumber: 0,
+                    username: '爱你们的TeeMo',
+                    sign: '有点想你们了，离散，回忆，面面面',
+                    starname: '只会笑的提莫',
+                    image: [
+                        'https://q.qlogo.cn/g?b=qq&nk=292847236&s=100',
+                        'https://q.qlogo.cn/g?b=qq&nk=292847236&s=100',
+                        'https://q.qlogo.cn/g?b=qq&nk=292847236&s=100',
+                        'https://q.qlogo.cn/g?b=qq&nk=292847236&s=100'
+                    ]
+                }
+            ]
         }
         this.flage = true  //判断是否还有数据
     }
@@ -75,28 +91,33 @@ class Scroll extends Component {
                 time = 'desc'
                 break
         }
-        let result = await http.post('/alldynamic',{
-            "focus": focus,
-            "time": time,
-            "pagenum":pagenum,
-            "pagesize":pagesize
-        })
-        //---------------------------------------------
-        result instanceof Array && result !==[] && await result.map(async (item,index)=>{
-            if(item.image && item.image.split('&').length>1){
-                let imgArr = item.image.split('&').slice(1)
-                item.image = []
-                imgArr.forEach(async (value, index) => {
-                    let img = await this.getImgs(value)
-                    img = await this.getLocalImg(img)
-                    //将从微信或取得图片替换掉原请求数据中的字符串
-                    item.image.push(img) 
-                });
-
-            }else if(item.image){
-                // console.log(2)
+        // let result = await http.post('/alldynamic',{
+        //     "focus": focus,
+        //     "time": time,
+        //     "pagenum":pagenum,
+        //     "pagesize":pagesize
+        // })
+        let result = [
+            {
+                image: 'https://q.qlogo.cn/g?b=qq&nk=292847236&s=100'
             }
-        })
+        ]
+        //---------------------------------------------
+        // result instanceof Array && result !==[] && await result.map(async (item,index)=>{
+        //     if(item.image && item.image.split('&').length>1){
+        //         let imgArr = item.image.split('&').slice(1)
+        //         item.image = []
+        //         imgArr.forEach(async (value, index) => {
+        //             let img = await this.getImgs(value)
+        //             img = await this.getLocalImg(img)
+        //             //将从微信或取得图片替换掉原请求数据中的字符串
+        //             item.image.push(img) 
+        //         });
+
+        //     }else if(item.image){
+        //         // console.log(2)
+        //     }
+        // })
         return result
     }
     async componentDidMount(){
@@ -107,7 +128,7 @@ class Scroll extends Component {
             return;
         }
         Toast.hide()
-        let _tem = !result.error&&result instanceof Array  ? this.setState({list: [...this.state.list,...result]}) : ''
+        // let _tem = !result.error&&result instanceof Array  ? this.setState({list: [...this.state.list,...result]}) : ''
         this.timer = setTimeout(()=>{
             let bScroll = new BScroll(this.props.fatherSe,{
                 scrollY: true,
@@ -143,9 +164,9 @@ class Scroll extends Component {
     }
 
     componentWillUnmount(){
-        Toast.hide()
-        clearTimeout(this.timer)
-        this.unmount = true
+        // Toast.hide()
+        // clearTimeout(this.timer)
+        // this.unmount = true
     }
 }
 

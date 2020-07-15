@@ -52,7 +52,7 @@ class Question extends Component {
                             objCurQ.answer.map((item, index)=>{
                                 return (
                                     <AnswerItem 
-                                      key={item} 
+                                      key={index} 
                                       onClick={this.getAnswer.bind(this, item)}
                                     >{index+1}. {item}</AnswerItem>
                                 )

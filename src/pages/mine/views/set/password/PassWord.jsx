@@ -74,20 +74,21 @@ class PassWord extends Component {
             if(!reg.test(this.state.pwd)) {
                 showToastNoMask('请输入6位以上英文或数字')
             }else if (this.state.pwd === this.state.Npwd) {
-                Toast.loading('Loading...');
-                let result = await http.get('/modifyinfo',{pwd:this.state.pwd})
-                Toast.hide();
-                if (result.code === 1) {
-                    showToastNoMask('密码修改失败,请稍后再试')
-                }
-                if (result.code === 0) {
-                    showToastNoMask('密码修改成功,即将退出')
-                    setTimeout(() => {
-                        // store.set('account/isLogin','false')
-                        // this.props.history.push('/')
-                        this.props.loginOut()
-                    }, 1200)
-                }
+                showToastNoMask('他已不在，无法修改密码')
+                // Toast.loading('Loading...');
+                // let result = await http.get('/modifyinfo',{pwd:this.state.pwd})
+                // Toast.hide();
+                // if (result.code === 1) {
+                //     showToastNoMask('密码修改失败,请稍后再试')
+                // }
+                // if (result.code === 0) {
+                //     showToastNoMask('密码修改成功,即将退出')
+                //     setTimeout(() => {
+                //         // store.set('account/isLogin','false')
+                //         // this.props.history.push('/')
+                //         this.props.loginOut()
+                //     }, 1200)
+                // }
             } else {
                 showToastNoMask('两次密码不一致')
             }

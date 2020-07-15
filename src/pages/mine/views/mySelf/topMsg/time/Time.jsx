@@ -4,12 +4,13 @@ import { TimeStyle, TimeBorder } from './TimeStyle'
 
 class Time extends Component {
     state = {
-        xiuxiu: 0
+        xiuxiu: '无数'
     }
     static getDerivedStateFromProps(nextProps, prevState) {
         if(nextProps.myselfData.sign){
            return {
-            xiuxiu : nextProps.myselfData.dynamicEnds.length
+            // xiuxiu : nextProps.myselfData.dynamicEnds.length
+            xiuxiu: '无数'
            }
         }
         return null;
